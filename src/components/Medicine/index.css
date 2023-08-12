@@ -1,0 +1,69 @@
+.contentBox {
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.topImage {
+  width: 100%;
+  height: 300px;
+  /* height: 20%;  */
+}
+
+.imageBox {
+  background-image: url('https://img.freepik.com/free-photo/image-professional-woman-doctor-physician-with-clipboard-writing-listening-patient-hospital-cl_1258-122379.jpg?size=626&ext=jpg&ga=GA1.2.1669029801.1690574436&semt=ais');
+  height: 400px;
+  width: 100%;
+  background-size: cover;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 10px;
+}
+
+.heading {
+  font-family: Roboto;
+  color: #ffffff;
+  font-size: 50px;
+}
+.searchContainer {
+  background-color: #33838a;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inputBox {
+  height: 30px;
+  width: 40%;
+  outline: none;
+}
+.buttons {
+  height: 30px;
+  width: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f20505;
+  color: #ffffff;
+  border-style: none;
+  font-family: roboto;
+}
+.spanText {
+  font-family: roboto;
+  font-weight: 450;
+}
+.ulList {
+}
+.listItem {
+  display: flex;
+  /* align-items: center; */
+  margin: 15px;
+}
+.spanText {
+  margin-right: 5px;
+}
+.heading {
+}

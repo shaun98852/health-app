@@ -1,0 +1,90 @@
+.headerBackground {
+}
+.topHeader {
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2%;
+  padding-right: 2%;
+  height: 90px;
+}
+.leftMedicineSection {
+  display: flex;
+  align-items: center;
+}
+
+.siteName {
+  font-family: Roboto;
+  font-size: 22px;
+}
+.image1 {
+  font-size: 40px;
+  margin-right: 10px;
+  color: #2abfbf;
+}
+
+.image2 {
+  font-size: 30px;
+  color: #33838a;
+}
+
+.bottomBox {
+  display: flex;
+  padding-top: 0px;
+}
+.tabsHeader {
+  background-color: #f2f2f2;
+
+  width: 30%;
+  height: 100vh;
+}
+.RightBox {
+  width: 70%;
+}
+.unList {
+  list-style-type: none;
+  padding-left: 2%;
+  margin-top: 0px;
+}
+.listItem {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  /* background-color: orange; */
+}
+.icon {
+  margin-right: 5px;
+  font-size: 20px;
+}
+.tabName {
+  font-size: 19px;
+  font-family: roboto;
+  font-weight: 400;
+}
+.background {
+}
+.background {
+}
+.background {
+}
+.background {
+}
+.background {
+}
+.background {
+}
+.background {
+}
+.background {
+}
+.background {
+}
+.background {
+}
+.background {
+}
+.background {
+}
+.background {
+}

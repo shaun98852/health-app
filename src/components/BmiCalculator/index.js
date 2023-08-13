@@ -26,10 +26,6 @@ const BmiCalculator = () => {
   const [height, setHeight] = useState(170)
   const [weight, setWeight] = useState(60)
 
-  //   useEffect(() => {
-  //     document.title = `Your BMI: ${getBmi(height, weight)}`
-  //   })
-
   const onIncrementWeight = () => {
     setWeight(prevWeight => prevWeight + 1)
   }

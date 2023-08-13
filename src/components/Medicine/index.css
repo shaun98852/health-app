@@ -1,7 +1,7 @@
 .contentBox {
   width: 100%;
   height: 100vh;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 
 .topImage {
@@ -28,6 +28,13 @@
   color: #ffffff;
   font-size: 50px;
 }
+
+@media screen and (max-width: 768px) {
+  .heading {
+    text-align: center;
+  }
+}
+
 .searchContainer {
   background-color: #33838a;
   height: 60px;
@@ -51,19 +58,85 @@
   border-style: none;
   font-family: roboto;
 }
-.spanText {
-  font-family: roboto;
-  font-weight: 450;
+
+.medicineImage {
+  height: 150px;
+  margin-right: 10px;
 }
-.ulList {
+
+.listUl {
+  list-style-type: none;
+  margin-top: 30px;
+  padding-left: 2%;
+  padding-right: 2%;
+  overflow-y: auto;
+  background-color: lightgreen;
+  height: 100vh;
 }
-.listItem {
+
+.itemList {
   display: flex;
-  /* align-items: center; */
-  margin: 15px;
+  align-items: center;
+  padding: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  overflow-y: auto;
 }
-.spanText {
-  margin-right: 5px;
+
+.detailBox {
+}
+
+.medicineName {
+  font-family: 'bebes nueva', Roboto;
+  color: navy;
+}
+
+.getDetails {
+  border-style: none;
+  background-color: #6495ed;
+  color: #ffffff;
+  font-family: roboto;
+  border-radius: 5px;
+  height: 40px;
+  padding: 10px;
+}
+
+.noMedicines {
+  text-align: center;
+}
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+.failedContainer {
+    margin-top:40px;
+
+}
+.failed Header {
+    text-align:center;
+    font-family:roboto;
+}
+.heading {
+}
+.heading {
+}
+.heading {
+}
+.heading {
+}
+.heading {
+}
+.heading {
+}
+.heading {
+}
+.heading {
+}
+.heading {
 }
 .heading {
 }

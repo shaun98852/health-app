@@ -1,4 +1,5 @@
 .headerBackground {
+  height: 100vh;
 }
 .topHeader {
   background-color: #f2f2f2;
@@ -38,10 +39,12 @@
 
   width: 30%;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 10%;
 }
-.RightBox {
-  width: 70%;
-}
+
 .unList {
   list-style-type: none;
   padding-left: 2%;
@@ -51,7 +54,6 @@
   display: flex;
   align-items: center;
   height: 40px;
-  /* background-color: orange; */
 }
 .icon {
   margin-right: 5px;
@@ -62,9 +64,19 @@
   font-family: roboto;
   font-weight: 400;
 }
-.background {
+.RightBox {
+  width: 70%;
+  height: 100vh;
+  background-color: lightgreen;
 }
-.background {
+.bmiDetails {
+  background-color: orange;
+  color: black;
+  font-family: Roboto;
+  border-style: None;
+  border-radius: 10px;
+  height: 40px;
+  margin-left: 10px;
 }
 .background {
 }

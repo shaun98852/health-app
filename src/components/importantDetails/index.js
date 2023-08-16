@@ -3,21 +3,21 @@ import * as loader from 'react-loader-spinner'
 
 import './index.css'
 
-const medicinesToShow = {
-  showMedicine: 'SUCCESS',
+const foodsToShow = {
+  showFood: 'SUCCESS',
   failure: 'FAILURE',
   loading: 'LOADING',
-  noMedicinesFound: 'NOT FOUND',
+  noFoodsFound: 'NOT FOUND',
   initial: 'INITIAL',
 }
 
 const ImpDetails = () => {
-  const [requiredMedicine, medicineChange] = useState('')
-  const [medicine, changeMedicine] = useState([])
-  const [showOrHideMedicine, changeShow] = useState(medicinesToShow.initial)
+  const [requiredFood, FoodChange] = useState('')
+  const [foodList, changeFoodList] = useState([])
+  const [showHideFood, changeShow] = useState(foodsToShow.initial)
 
   const getMedicineDetails = async () => {
-    changeShow(medicinesToShow.loading)
+    changeShow(foodsToShow.loading)
 
     // const query = 'orange'
 
@@ -30,7 +30,7 @@ const ImpDetails = () => {
       contentType: 'application/json',
     }
 
-    const url = `https://api.api-ninjas.com/v1/nutrition?query=${requiredMedicine}`
+    const url = `https://api.api-ninjas.com/v1/nutrition?query=${requiredFood}`
 
     const details = await fetch(url, options)
     const finalDetails = await details.json()
@@ -56,20 +56,20 @@ const ImpDetails = () => {
           Object.keys(eachItem).map(key => [key, eachItem[key]]),
         )
 
-        changeShow(medicinesToShow.showMedicine)
+        changeShow(foodsToShow.showFood)
 
-        changeMedicine(nutritionSet)
+        changeFoodList(nutritionSet)
       } else {
-        changeShow(medicinesToShow.noMedicinesFound)
+        changeShow(foodsToShow.noFoodsFound)
       }
     } else {
-      changeShow(medicinesToShow.failure)
+      changeShow(foodsToShow.failure)
     }
   }
 
-  const noMedicinesFound = () => (
+  const noFoundFood = () => (
     <div className="noMedicines">
-      <h1 className="noMedicinesFound">No Food Items Found</h1>
+      <h1 className="noMedicinesFound">No Food Found</h1>
     </div>
   )
 
@@ -91,9 +91,9 @@ const ImpDetails = () => {
     </div>
   )
 
-  const showMedicineDetails = () => (
+  const showFoodDetails = () => (
     <ul className="listUl">
-      {medicine.map(eachItem => (
+      {foodList.map(eachItem => (
         <li className="itemList">
           <ul className="detailBox">
             {eachItem.map(everyItem => (
@@ -109,17 +109,17 @@ const ImpDetails = () => {
   )
 
   const switchFunction = () => {
-    switch (showOrHideMedicine) {
-      case medicinesToShow.showMedicine:
-        return showMedicineDetails()
-      case medicinesToShow.failure:
+    switch (showHideFood) {
+      case foodsToShow.showFood:
+        return showFoodDetails()
+      case foodsToShow.failure:
         return Failed()
-      case medicinesToShow.loading:
+      case foodsToShow.loading:
         return Loading()
-      case medicinesToShow.initial:
+      case foodsToShow.initial:
         return FindDetailsHere()
-      case medicinesToShow.noMedicinesFound:
-        return noMedicinesFound()
+      case foodsToShow.noFoodsFound:
+        return noFoundFood()
       default:
         return null
     }
@@ -135,9 +135,9 @@ const ImpDetails = () => {
         <input
           type="text"
           className="inputBox"
-          value={requiredMedicine}
+          value={requiredFood}
           onChange={e => {
-            medicineChange(e.target.value)
+            FoodChange(e.target.value)
           }}
           placeholder="Enter Food"
         />

@@ -78,9 +78,20 @@
   height: 40px;
   margin-left: 10px;
 }
-.background {
+.listItem1 {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  background-color: greenyellow;
 }
-.background {
+.bmiDetails1 {
+  background-color: greenyellow;
+  color: black;
+  font-family: Roboto;
+  border-style: None;
+  border-radius: 10px;
+  height: 40px;
+  margin-left: 10px;
 }
 .background {
 }

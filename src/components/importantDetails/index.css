@@ -7,12 +7,14 @@
 .topImage {
   width: 100%;
   height: 300px;
+  height: 100%;
   /* height: 20%;  */
 }
 
-.imageBoxes {
-  background-image: url('https://img.freepik.com/free-photo/image-professional-woman-doctor-physician-with-clipboard-writing-listening-patient-hospital-cl_1258-122379.jpg?size=626&ext=jpg&ga=GA1.2.1669029801.1690574436&semt=ais');
+.imageBox {
+  background-image: url('https://cdn.pixabay.com/photo/2017/02/15/10/39/salad-2068220_1280.jpg');
   height: 400px;
+
   width: 100%;
   background-size: cover;
   padding-top: 20px;
@@ -119,11 +121,20 @@
   text-align: center;
   font-family: roboto;
 }
-.heading {
+.Items {
+  display: flex;
+  align-items: center;
 }
-.heading {
+.name {
+  font-family: 'bebes nueva', Roboto;
+  color: navy;
+  font-weight: bold;
+  font-size: 20px;
 }
-.heading {
+.value {
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 450;
 }
 .heading {
 }

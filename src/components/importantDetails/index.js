@@ -11,28 +11,54 @@ const medicinesToShow = {
   initial: 'INITIAL',
 }
 
-const Medicine = () => {
+const ImpDetails = () => {
   const [requiredMedicine, medicineChange] = useState('')
   const [medicine, changeMedicine] = useState([])
   const [showOrHideMedicine, changeShow] = useState(medicinesToShow.initial)
 
   const getMedicineDetails = async () => {
     changeShow(medicinesToShow.loading)
-    const url = `https://medicine-name-and-details.p.rapidapi.com/?medicineName=${requiredMedicine}`
+
+    // const query = 'orange'
+
     const options = {
       method: 'GET',
+
       headers: {
-        'X-RapidAPI-Key': '2b70e93060msh21c3e3d511037ecp1d884bjsnf4c7a95dee3a',
-        'X-RapidAPI-Host': 'medicine-name-and-details.p.rapidapi.com',
+        'X-Api-Key': '4WXbQTmDCTUdLBgb57B0pg==c6RZIJzuPdBegkT6',
       },
+      contentType: 'application/json',
     }
+
+    const url = `https://api.api-ninjas.com/v1/nutrition?query=${requiredMedicine}`
 
     const details = await fetch(url, options)
     const finalDetails = await details.json()
+
     if (details.ok === true) {
       if (finalDetails.length > 0) {
+        const nutrition = finalDetails.map(eachItem => ({
+          Name: eachItem.name,
+          Calories: eachItem.calories,
+          Carbohydrates: eachItem.carbohydrates_total_g,
+          'Cholesterol(mg)': eachItem.cholesterol_mg,
+          'FatSaturate(g)': eachItem.fat_saturated_g,
+          'FatTotal(g)': eachItem.fat_total_g,
+          'Fiber(g)': eachItem.fiber_g,
+
+          'Potassium(mg)': eachItem.potassium_mg,
+          'Protein(g)': eachItem.protein_g,
+          'ServingSize(g)': eachItem.serving_size_g,
+          'Sodium(mg)': eachItem.sodium_mg,
+          'Sugar(g)': eachItem.sugar_g,
+        }))
+        const nutritionSet = nutrition.map(eachItem =>
+          Object.keys(eachItem).map(key => [key, eachItem[key]]),
+        )
+
         changeShow(medicinesToShow.showMedicine)
-        changeMedicine(finalDetails)
+
+        changeMedicine(nutritionSet)
       } else {
         changeShow(medicinesToShow.noMedicinesFound)
       }
@@ -43,7 +69,7 @@ const Medicine = () => {
 
   const noMedicinesFound = () => (
     <div className="noMedicines">
-      <h1 className="noMedicinesFound">No Medicines Found</h1>
+      <h1 className="noMedicinesFound">No Food Items Found</h1>
     </div>
   )
 
@@ -69,21 +95,14 @@ const Medicine = () => {
     <ul className="listUl">
       {medicine.map(eachItem => (
         <li className="itemList">
-          <div>
-            <img
-              src={eachItem.medicineImage}
-              alt="Medicine"
-              className="medicineImage"
-            />
-          </div>
-          <div className="detailBox">
-            <h1 className="medicineName">{eachItem.medicineName}</h1>
-            <a href={eachItem.detailsUrl} target="_blank" rel="noreferrer">
-              <button className="getDetails" type="button">
-                Get Details
-              </button>
-            </a>
-          </div>
+          <ul className="detailBox">
+            {eachItem.map(everyItem => (
+              <li className="Items">
+                <p className="name">{`${everyItem[0]} : `}</p>
+                <p className="value">{everyItem[1]}</p>
+              </li>
+            ))}
+          </ul>
         </li>
       ))}
     </ul>
@@ -108,8 +127,8 @@ const Medicine = () => {
 
   return (
     <div className="contentBox">
-      <div className="imageBoxes">
-        <h1 className="heading">Your Online Pharmacist</h1>
+      <div className="imageBox">
+        <h1 className="heading">Your Online Nutritionist</h1>
       </div>
 
       <div className="searchContainer">
@@ -120,7 +139,7 @@ const Medicine = () => {
           onChange={e => {
             medicineChange(e.target.value)
           }}
-          placeholder="Enter Medicine"
+          placeholder="Enter Food"
         />
         <button className="buttons" type="button" onClick={getMedicineDetails}>
           Search
@@ -132,4 +151,4 @@ const Medicine = () => {
   )
 }
 
-export default Medicine
+export default ImpDetails
